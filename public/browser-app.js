@@ -3,6 +3,12 @@ const loadingDOM = document.querySelector('.loading-text')
 const formDOM = document.querySelector('.task-form')
 const taskInputDOM = document.querySelector('.task-input')
 const formAlertDOM = document.querySelector('.form-alert')
+
+
+
+
+
+
 // Load tasks from /api/tasks
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
@@ -85,3 +91,11 @@ formDOM.addEventListener('submit', async (e) => {
     formAlertDOM.classList.remove('text-success')
   }, 3000)
 })
+
+
+
+// function saveTask() {
+//   var newTask = document.getElementById('custom-task').value;
+//   localStorage.setItem = ('newTask', newTask);
+//   console.log(newTask);
+// }

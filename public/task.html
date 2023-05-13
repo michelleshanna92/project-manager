@@ -14,7 +14,10 @@
     </header>
 
     <section id="home-task-container">
-        <label for="home-tasks">Home Tasks</label>
+
+        <textarea id="custom-task"></textarea>
+
+        <label for="home-tasks">Home Task</label>
     
         <select name="home-tasks" id="home-tasks">
         <!-- first option makes sure the initial view of the list is blank -->
@@ -33,11 +36,19 @@
             <option>Within a Month</option>
         </select>
 
-        <button id="save-home-tasks">Save Task</button>
+        <button id="save-home-tasks" onclick="saveTask()">Save Task</button>
+
+        <ul id="home-task-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </section>
 
     <section id="work-task-container">
-        <label for="work-tasks">Work Tasks</label>
+        <label for="work-tasks">Work Task</label>
     
         <select name="work-tasks" id="work-tasks">
             <option></option>
@@ -56,7 +67,17 @@
         </select>
 
         <button id="save-home-tasks">Save Task</button>
+
+        <ul id="work-task-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </section>
+
     
+    <script src="browser-app.js"></script>
 </body>
 </html>
