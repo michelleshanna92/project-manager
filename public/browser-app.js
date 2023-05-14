@@ -5,6 +5,11 @@ const taskInputDOM = document.querySelector('.task-input')
 const formAlertDOM = document.querySelector('.form-alert')
 
 
+var homeTaskText = document.querySelector('#home-task-text')
+var newHomeTask = document.getElementById('home-task-text')
+var taskList = [];
+
+
 
 
 
@@ -93,9 +98,60 @@ formDOM.addEventListener('submit', async (e) => {
 })
 
 
+const node = document.createElement("li");
+const textnode = document.createTextNode("fard");
+node.appendChild(textnode);
+document.getElementById("home-task-list").appendChild(node);
 
-// function saveTask() {
-//   var newTask = document.getElementById('custom-task').value;
-//   localStorage.setItem = ('newTask', newTask);
-//   console.log(newTask);
-// }
+
+function saveHomeTask() {
+  if (document.getElementById('home-tasks').value == 'customTask') {
+    var newTask = document.getElementById('home-task-text').value;
+    taskList.push(newTask);
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+    console.log(taskList);
+  } else {
+    var newTask = document.getElementById('home-tasks').value;
+    taskList.push(newTask);
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+    console.log(taskList);
+  }
+}
+
+function checkHomeVal() {
+  if (document.getElementById('home-tasks').value == 'customTask') {
+    document.getElementById('home-task-text').style.display = 'block';
+    
+  } else { 
+    homeTaskText.style.display = 'none';
+  }
+}
+
+function checkWorkVal() {
+  if (document.getElementById('work-tasks').value == 'customTask') {
+    document.getElementById('work-task-text').style.display = 'block';
+    
+  } else { 
+    document.getElementById('work-task-text').style.display = 'none';
+  }
+}
+
+function init() {
+  var storedTasks = JSON.parse(localStorage.getItem('taskList'));
+  console.log(storedTasks);
+  
+}
+
+function clearLocalStorage() {
+  localStorage.clear();
+}
+
+function arrayToList(taskList) {
+  let list = null;
+  for (let i = taskList.length - 1; i >= 0; i--) {
+      list = { value: taskList[i], rest: list };
+  }
+  return list;
+}
+
+init();

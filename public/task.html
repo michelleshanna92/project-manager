@@ -7,7 +7,7 @@
     <title>Personal Project Manager</title>
     <link rel="stylesheet" href="/public/main.css" />
 </head>
-<body>
+<body onload="init()">
 
     <header id="heading-text">
         <h1>Welcome to your Personal Project Manager!</h1>
@@ -15,18 +15,21 @@
 
     <section id="home-task-container">
 
-        <textarea id="custom-task"></textarea>
+        <!-- <textarea id="custom-task"></textarea> -->
 
         <label for="home-tasks">Home Task</label>
     
-        <select name="home-tasks" id="home-tasks">
+        <select name="home-tasks" id="home-tasks" onchange="checkHomeVal()">
         <!-- first option makes sure the initial view of the list is blank -->
             <option></option>
-            <option value="mow">Mow the Lawn</option>
-            <option value="trash">Take out the Trash</option>
-            <option value="laundry">Do the Laundry</option>
-            <option value="vacuum">Vacuum the House</option>
+            <option value="Mow the Lawn">Mow the Lawn</option>
+            <option value="Take out the Trash">Take out the Trash</option>
+            <option value="Do the Laundry">Do the Laundry</option>
+            <option value="Vacuum the House">Vacuum the House</option>
+            <option value="customTask">Custom Task</option>
         </select>
+
+        
 
         <label for="home-due-date">When is it Due?</label>
         <select name="home-due-date" id="home-due-date">
@@ -34,11 +37,14 @@
             <option>One Day</option>
             <option>Within a Week</option>
             <option>Within a Month</option>
+            
         </select>
 
-        <button id="save-home-tasks" onclick="saveTask()">Save Task</button>
+        <textarea id="home-task-text"></textarea>
 
-        <ul id="home-task-list">
+        <button id="save-home-tasks" onclick="saveHomeTask()">Save Task</button>
+
+        <ul id="home-task-list"> Current Home Tasks:
             <li></li>
             <li></li>
             <li></li>
@@ -50,12 +56,14 @@
     <section id="work-task-container">
         <label for="work-tasks">Work Task</label>
     
-        <select name="work-tasks" id="work-tasks">
+        <select name="work-tasks" id="work-tasks" onchange="checkWorkVal()">
             <option></option>
             <option value="boss-meeting">Meet with the Boss</option>
             <option value="client-meeting">Meet with the Client</option>
             <option value="progress-report">Provide Progress Report</option>
             <option value="budget-sheet">Provide Budget Sheet</option>
+            <option value="customTask">Custom Task</option>
+
         </select>
 
         <label for="work-due-date">When is it Due?</label>
@@ -66,9 +74,11 @@
             <option>Within a Month</option>
         </select>
 
-        <button id="save-home-tasks">Save Task</button>
+        <textarea id="work-task-text"></textarea>
 
-        <ul id="work-task-list">
+        <button id="save-work-tasks">Save Task</button>
+
+        <ul id="work-task-list"> Current Work Tasks:
             <li></li>
             <li></li>
             <li></li>
@@ -77,6 +87,7 @@
         </ul>
     </section>
 
+    <button id="clear-local-storage" onclick="clearLocalStorage()">Clear Local Storage</button>
     
     <script src="browser-app.js"></script>
 </body>
