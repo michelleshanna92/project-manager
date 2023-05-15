@@ -7,9 +7,12 @@ const formAlertDOM = document.querySelector('.form-alert')
 
 var homeTaskText = document.querySelector('#home-task-text')
 var newHomeTask = document.getElementById('home-task-text')
-var taskList = [];
+var homeTaskList = [];
+var workTaskList = [];
 
 
+// let ul = document.getElementById('home-task-list');
+// let li = document.createElement('li');
 
 
 
@@ -106,15 +109,30 @@ document.getElementById("home-task-list").appendChild(node);
 
 function saveHomeTask() {
   if (document.getElementById('home-tasks').value == 'customTask') {
-    var newTask = document.getElementById('home-task-text').value;
-    taskList.push(newTask);
-    localStorage.setItem('taskList', JSON.stringify(taskList));
-    console.log(taskList);
+    var newHomeTask = document.getElementById('home-task-text').value;
+    homeTaskList.push(newHomeTask);
+    localStorage.setItem('homeTaskList', JSON.stringify(homeTaskList));
+    console.log(homeTaskList);
   } else {
-    var newTask = document.getElementById('home-tasks').value;
-    taskList.push(newTask);
-    localStorage.setItem('taskList', JSON.stringify(taskList));
-    console.log(taskList);
+    var newHomeTask = document.getElementById('home-tasks').value;
+    homeTaskList.push(newHomeTask);
+    // localStorage.setItem('homeTaskList', JSON.stringify(homeTaskList));
+    localStorage.setItem('homeTaskList', homeTaskList);
+    console.log(homeTaskList);
+  }
+}
+
+function saveWorkTask() {
+  if (document.getElementById('work-tasks').value == 'customTask') {
+    var newWorkTask = document.getElementById('work-task-text').value;
+    workTaskList.push(newWorkTask);
+    localStorage.setItem('taskList', JSON.stringify(workTaskList));
+    console.log(workTaskList);
+  } else {
+    var newWorkTask = document.getElementById('work-tasks').value;
+    workTaskList.push(newWorkTask);
+    localStorage.setItem('workTaskList', JSON.stringify(workTaskList));
+    console.log(workTaskList);
   }
 }
 
@@ -136,22 +154,47 @@ function checkWorkVal() {
   }
 }
 
+
+
 function init() {
-  var storedTasks = JSON.parse(localStorage.getItem('taskList'));
-  console.log(storedTasks);
+  var storedHomeTasks = JSON.parse(localStorage.getItem('homeTaskList'));
+  
+  // var storedHomeTasks1 = localStorage.getItem('homeTaskList');
+  
+  var storedWorkTasks = JSON.parse(localStorage.getItem('workTaskList'));
+  var currentHomeTasks = document.getElementById('current-home-tasks');
+  var homeTasksString = JSON.stringify(storedHomeTasks);
+  // JSON.stringify(storedWorkTasks);
+  console.log('Home Tasks: ' + storedHomeTasks);
+  console.log('Work Tasks: ' + storedWorkTasks);
+  // currentHomeTasks.textContent = storedHomeTasks.split(',');
+
+  for (let i = 0; i < storedHomeTasks.length; i++){
+    let ul = document.getElementById('home-task-list');
+    let li = document.createElement('li');
+    ul.append(li);
+    li.textContent = storedHomeTasks[i];
+  // currentHomeTasks.textContent = storedHomeTasks;
+  console.log(typeof storedHomeTasks);
+  console.log(typeof homeTasksString);
+
+  }
   
 }
 
+
 function clearLocalStorage() {
   localStorage.clear();
+  location.reload();
 }
 
-function arrayToList(taskList) {
-  let list = null;
-  for (let i = taskList.length - 1; i >= 0; i--) {
-      list = { value: taskList[i], rest: list };
-  }
-  return list;
-}
 
-init();
+
+// function arrayToList(taskList) {
+//   let list = null;
+//   for (let i = taskList.length - 1; i >= 0; i--) {
+//       list = { value: taskList[i], rest: list };
+//   }
+//   return list;
+// }
+

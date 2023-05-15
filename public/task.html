@@ -34,9 +34,9 @@
         <label for="home-due-date">When is it Due?</label>
         <select name="home-due-date" id="home-due-date">
             <option></option>
-            <option>One Day</option>
-            <option>Within a Week</option>
-            <option>Within a Month</option>
+            <option value="One Day">One Day</option>
+            <option value="Within a Week">Within a Week</option>
+            <option value="Within a Month">Within a Month</option>
             
         </select>
 
@@ -45,12 +45,9 @@
         <button id="save-home-tasks" onclick="saveHomeTask()">Save Task</button>
 
         <ul id="home-task-list"> Current Home Tasks:
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            
         </ul>
+        
     </section>
 
     <section id="work-task-container">
@@ -58,10 +55,10 @@
     
         <select name="work-tasks" id="work-tasks" onchange="checkWorkVal()">
             <option></option>
-            <option value="boss-meeting">Meet with the Boss</option>
-            <option value="client-meeting">Meet with the Client</option>
-            <option value="progress-report">Provide Progress Report</option>
-            <option value="budget-sheet">Provide Budget Sheet</option>
+            <option value="Meet with the Boss">Meet with the Boss</option>
+            <option value="Meet with the Client">Meet with the Client</option>
+            <option value="Provide Progress Report">Provide Progress Report</option>
+            <option value="Provide Budget Sheet">Provide Budget Sheet</option>
             <option value="customTask">Custom Task</option>
 
         </select>
@@ -69,14 +66,14 @@
         <label for="work-due-date">When is it Due?</label>
         <select name="work-due-date" id="work-due-date">
             <option></option>
-            <option>One Day</option>
-            <option>Within a Week</option>
-            <option>Within a Month</option>
+            <option value="One Day">One Day</option>
+            <option value="Within a Week">Within a Week</option>
+            <option value="Within a Month">Within a Month</option>
         </select>
 
         <textarea id="work-task-text"></textarea>
 
-        <button id="save-work-tasks">Save Task</button>
+        <button id="save-work-tasks" onclick="saveWorkTask()">Save Task</button>
 
         <ul id="work-task-list"> Current Work Tasks:
             <li></li>
@@ -87,7 +84,7 @@
         </ul>
     </section>
 
-    <button id="clear-local-storage" onclick="clearLocalStorage()">Clear Local Storage</button>
+    <button id="clear-local-storage" onclick="clearLocalStorage()">Clear Local Storage and Refresh Page</button>
     
     <script src="browser-app.js"></script>
 </body>
