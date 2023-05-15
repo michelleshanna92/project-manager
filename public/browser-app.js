@@ -134,10 +134,7 @@ function init() {
 }
 
 
-function clearLocalStorage() {
-  localStorage.clear();
-  location.reload();
-}
+
 
 
 
