@@ -113,7 +113,7 @@ function checkHomeVal() {
     document.getElementById('home-task-text').style.display = 'block';
     
   } else { 
-    homeTaskText.style.display = 'none';
+    document.getElementById('home-task-text').style.display = 'none';
   }
 }
 
