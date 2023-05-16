@@ -38,6 +38,7 @@ label {
 li {
     margin: 5px;
     font-size: 25px;
+    
 }
 
 ul {
@@ -64,4 +65,10 @@ ul {
     position: absolute;
     top: 700px;
     left: 45%;
+}
+
+#current-home-tasks {
+    background: transparent;
+    border: none;
+    resize: none;
 }
