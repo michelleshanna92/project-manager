@@ -4,19 +4,41 @@ const path = require('path');
 
 const app = express();
 
-const port = 3001;
+const PORT = 3001;
 
 const routes = require('./controllers/api/index');
 
 //middleware
 app.use(express.static('public'));
 
-//routes 
-app.get('/hi', (req, res)=>{
-res.send('Task Manager')
-})
+//Sending html file
+app.get('/', (req, res) => {
+    res.send(
+      `<p>API - An application programming interface, is a computing interface that defines interactions between multiple software intermediaries</p>`
+    );
+  });
 
-app.use("./api/v1/index", tasks)
+  // sending JSON
+  app.get('/api', (req, res) => {
+    res.json({
+      term: 'api',
+      description:
+        'An application programming interface, is a computing interface that defines interactions between multiple software intermediaries',
+    });
+  });
+
+app.get('/index', (req, res) => 
+    res.sendFile(path.join(__dirname), 'public/index.html')
+);
+
+app.get('/task', (req, res) => 
+    res.sendFile(path.join(__dirname), 'public/task.html'));
+
+app.listen(PORT, () =>
+    console.log(`App listeting at http://localhost:${PORT}`)
+);
+
+
 
 
 // app.get('/api/v1/tasks') - get all the tasks 
@@ -25,8 +47,4 @@ app.use("./api/v1/index", tasks)
 // app.patch('/api/v1/tasks/: id') - update task
 // app.delete('/api/v1/tasks/: id') - delete task
 
-
-
-
-app.listen(port, console.log(`Server listening on ${port}...`))
 
