@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="box">
+        <form class="form" id="login">
+            <h1 class="title1">Login</h1>
+            <div class="page_msg msg_error"></div>
+            <div class="inputGRP">
+                <input type="text" class="InputForForm" autofocus placeholder="Username or email">
+                <div class="error"></div>
+            </div>
+            <div class="inputGRP">
+                <input type="password" class="InputForForm" autofocus placeholder="Password">
+                <div class="error"></div>
+            </div>
+            <button class="button_click" type="submit">Login</button>
+
+            <p class="text1">
+                <a class="link1" href="./" id="linkCreateAccount">Create account</a>
+            </p>
+        </form>
+        <form class="form popForm" id="createAccount">
+            <h1 class="title1">Create Account</h1>
+            <div class="page_msg msg_error"></div>
+            <div class="input">
+                <input type="text" id="signupUsername" class="InputForForm" autofocus placeholder="Username">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <input type="text" class="InputForForm" autofocus placeholder="Email Address">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <input type="password" class="InputForForm" autofocus placeholder="Password">
+                <div class="error"></div>
+            </div>
+            <div class="input">
+                <input type="password" class="InputForForm" autofocus placeholder="Confirm password">
+                <div class="error"></div>
+            </div>
+            <button class="button_click" type="submit">Continue</button>
+            <p class="text1">
+                <a class="link1" href="./" id="linkLogin">Have an account? Sign in here</a>
+            </p>
+        </form>
+    </div>
+
+</body>
