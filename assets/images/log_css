@@ -1,0 +1,124 @@
+body {
+    --color-primary: #227fa7;
+    --color-primary-dark: #001e7f;
+    --color-secondary: #383f79;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: url(./background.jpg);
+    background-size: cover;
+}
+
+.box {
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #a1c5de;
+}
+
+.box,
+.input,
+.btn1 {
+    font: 500 1rem 'Quicksand', sans-serif;
+}
+
+.form--hidden {
+    display: none;
+}
+
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.title1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.pageMSG {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pageMSG--success {
+    color: var(--color-success);
+}
+
+.pageMSG--error {
+    color: var(--color-error);
+}
+
+.input-grp {
+    margin-bottom: 1rem;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #459dcf;
+    outline: none;
+    background: #f5f8f9;
+
+}
+
+.input:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+.page_input_error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.btn1 {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.btn1:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn1:active {
+    transform: scale(0.98);
+}
+
+.text1 {
+    text-align: center;
+}
+
+.link1 {
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link1:hover {
+    text-decoration: underline;
+}
