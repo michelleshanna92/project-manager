@@ -1,39 +1,46 @@
-const express = require('express');
-
 const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
+
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-const port = 3001;
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
-const exphbs = require('express-handlebars');
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
-const routes = require('./controllers/api/index');
+app.use(session(sess));
 
+// Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-//middleware
-app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-//routes 
-app.get('/hi', (req, res)=>{
-res.send('Task Manager')
-})
+app.use(routes);
 
-// app.use("./api/v1/index", tasks)
-
-
-// app.get('/api/v1/tasks') - get all the tasks 
-// app.post('/api/v1/tasks') -create a new task
-// app.get('/api/v1/tasks/: id') - get single task
-// app.patch('/api/v1/tasks/: id') - update task
-// app.delete('/api/v1/tasks/: id') - delete task
-
-
-
-
-
-
-app.listen(port, console.log(`Server listening on ${port}...`))
-
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
