@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="box">
+        <form class="form" id="login">
+            <h1 class="title1">Login</h1>
+            <div class="pageMSG pageMSG--error"></div>
+            <div class="input-grp">
+                <input type="text" class="input" autofocus placeholder="Username or email">
+                <div class="input_error"></div>
+            </div>
+            <div class="input-grp">
+                <input type="password" class="input" autofocus placeholder="Password">
+                <div class="input_error"></div>
+            </div>
+            <button class="btn1" type="submit">Continue</button>
+            <p class="text1">
+                <a class="link1" href="./" id="linkCreateAccount">Create account</a>
+            </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="title1">Create Account</h1>
+            <div class="pageMSG pageMSG--error"></div>
+            <div class="input-grp">
+                <input type="text" id="signupUsername" class="input" autofocus placeholder="Username">
+                <div class="input_error"></div>
+            </div>
+            <div class="input-grp">
+                <input type="text" class="input" autofocus placeholder="Email Address">
+                <div class="input_error"></div>
+            </div>
+            <div class="input-grp">
+                <input type="password" class="input" autofocus placeholder="Password">
+                <div class="input_error"></div>
+            </div>
+            <div class="input-grp">
+                <input type="password" class="input" autofocus placeholder="Confirm password">
+                <div class="input_error"></div>
+            </div>
+            <button class="btn1" type="submit">Continue</button>
+            <p class="text1">
+                <a class="link1" href="./" id="linkLogin">Login Page</a>
+            </p>
+        </form>
+    </div>
+
+</body>
