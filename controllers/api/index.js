@@ -1,11 +1,8 @@
-// task routes
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const projectRoutes = require('./projectRoutes');
 
-const express = require('express')
-const router = express.Router();
+router.use('/users', userRoutes);
+router.use('/projects', projectRoutes);
 
-
-router.route('/').get((req, res) => {
-    res.send('all tasks')
-})
-
-module.exports = router 
+module.exports = router;
