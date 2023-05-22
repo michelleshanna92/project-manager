@@ -1,10 +1,10 @@
 # Personal Idea Board
 
-The Personal Idea Board is an application that allows the user to add multiple tasks and set prioritization for tasks according to its level of importance and/or deadline. This application is developed for users looking to keep track of important events such as projects, homework, and everyday tasks.  Here are some advantages of using Task Manager:
+The Personal Idea Board is an application that allows the user to add one or multiple ideas and store information on a personal board. This application is developed for users looking to keep track of their ideas and eliminate the inconvenience of having to forget a potentially useful idea. Here are some advantages of using Task Manager:
 
-* Worry-free customization of dates/prioritization
-* The user has no limit on how many tasks they can add/remove
-* Eliminates the concern of having to forget about an any task
+* Worry-free customization
+* The user has no limit on how many ideas they can add/remove
+* Each user gets their own private interspace when they create an account
 
 ## How It Works
 1. The user must create an account by creating a username and password
