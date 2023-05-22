@@ -12,8 +12,7 @@ The Personal Idea Board is an application that allows the user to add multiple t
 3. The user Logs in and can now add a an idea they want to remember!
 
 ## Usage
-
-Page Link:
+Deployed Application: https://project-manager-group4.herokuapp.com/ 
 
 
 ## Screenshots
