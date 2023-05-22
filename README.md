@@ -9,7 +9,7 @@ The Personal Idea Board is an application that allows the user to add multiple t
 ## How It Works
 1. The user must create an account by creating a username and password
 2. The account information will be stored in a database and login information will be active
-3. The user Logs in and can now add a an idea they want to remember!
+3. The user Logs in and can now add an idea that they want to remember!
 
 ## Usage
 
